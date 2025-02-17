@@ -1,0 +1,20 @@
+{...item} desestrutura o item no index.tsx do header.
+nesse caso aqui para responsividade <nav className='flex items-center gap-4 sm:gap-10'>
+
+colocamos o gap-4 para tela menores tipo celulares e quando for maior gap-10
+
+clsx
+adicionar classes dinamicamentes
+
+twmerge
+biblioteca que serve para juntar estilos tailwind se você quer dividir ele em linhas (aceita array) ele junta tudo em uma classe só.
+ajuda a localizar classes repetidas.
+
+&& = AND
+
+
+isActive && 'text-gray-50'
+ou
+{
+  'hover:text-gray-50': !isactive,
+}
