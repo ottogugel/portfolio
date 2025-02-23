@@ -42,7 +42,7 @@ export const HeroSection = () => {
 
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
             <Button className="w-max shadow-button">
-              Entre em contato
+              Contact me
               <HiArrowNarrowRight size={10} />
             </Button>
 
@@ -64,7 +64,7 @@ export const HeroSection = () => {
         <Image
           width={420}
           height={404}
-          src="/images/profile-pic.png"
+          src="/images/profile-pic2.png"
           alt="Foto do perfil do Otto Gugel"
           className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
         />

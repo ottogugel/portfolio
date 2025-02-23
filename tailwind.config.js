@@ -19,6 +19,9 @@ module.exports = {
       boxShadow: {
         button: "0px 0px 68px 7px rgba(0, 100, 255, 0.4)",
       },
+      gridTemplateColumns: {
+        "auto-fit-264": "repeat(auto-fit, minmax(264px, 1fr))",
+      },
     },
   },
   plugins: [],
