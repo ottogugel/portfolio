@@ -39,7 +39,7 @@ export const ProjectCard = () => {
           </div>
 
           <Link href="/projects/nearby">
-            Ver projeto
+            See project
             <HiArrowNarrowRight />
           </Link>
         </div>

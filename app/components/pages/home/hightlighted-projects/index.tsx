@@ -16,9 +16,9 @@ export const HighlightedProjects = () => {
           <HorizontalDivider className="my-16" />
 
           <p className="flex items-center gap-1.5">
-            <span className="text-gray-400">Se interessou?</span>
-            <Link href='/projects' className="inline-flex">
-            Ver todos
+            <span className="text-gray-400">Interested?</span>
+            <Link href="/projects" className="inline-flex">
+              See all
             </Link>
           </p>
         </div>
