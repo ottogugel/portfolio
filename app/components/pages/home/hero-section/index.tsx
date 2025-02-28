@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "@/app/components/button";
 import { TechBadge } from "@/app/components/tech-badge";
 import Image from "next/image"
@@ -20,6 +21,14 @@ const MOCK_CONTACTS = [
 ];
 
 export const HeroSection = () => {
+
+  const handleContact = () => {
+    const contactSection = document.querySelector('#contact')
+    if(contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
@@ -41,7 +50,7 @@ export const HeroSection = () => {
           </div>
 
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
-            <Button className="w-max shadow-button">
+            <Button className="w-max shadow-button" onClick={handleContact}>
               Contact me
               <HiArrowNarrowRight size={10} />
             </Button>
@@ -49,10 +58,10 @@ export const HeroSection = () => {
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
               {MOCK_CONTACTS.map((contact, index) => (
                 <a
-                href={contact.url}
-                key={`contact-${index}`}
-                target="_blank"
-                className="hover:text-gray-100 transition-colors"
+                  href={contact.url}
+                  key={`contact-${index}`}
+                  target="_blank"
+                  className="hover:text-gray-100 transition-colors"
                 >
                   {contact.icon}
                 </a>

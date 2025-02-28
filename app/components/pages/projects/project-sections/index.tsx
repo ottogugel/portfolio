@@ -33,8 +33,9 @@ export const ProjectSections = () => {
           src={section.image}
           width={1080}
           height={672}
-          className="w-full"
-          alt="Thumbnail de cada tela"
+          className="w-full aspect-auto rounded-lg object-cover"
+          alt={`Imagem da sessão ${section.title}`}
+          unoptimized
           />
         </div>
       ))}

@@ -18,3 +18,5 @@ ou
 {
   'hover:text-gray-50': !isactive,
 }
+
+aula 08 https://www.youtube.com/watch?v=B_hKFi8mN8I&list=PLY_G6KZ7jlfU41bdaWpTsOnfCC7bmpJcL&index=8
