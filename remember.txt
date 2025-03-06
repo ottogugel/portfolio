@@ -19,4 +19,9 @@ ou
   'hover:text-gray-50': !isactive,
 }
 
-aula 08 https://www.youtube.com/watch?v=B_hKFi8mN8I&list=PLY_G6KZ7jlfU41bdaWpTsOnfCC7bmpJcL&index=8
+Hygraph CMS - É uma API que traz as informações cadastradas ou seja uma vez configurar esse CMS com o nosso site, não é necessário mexer mais site somente controlar o conteudo pelo painel de CMS.
+
+Migrado do Prisma para o Hygraph CMS.
+
+Como usar, primeiro logar no site do hygraphcms, em seguida criar um projeto "free forever"
+ir em schema e criar um models.
