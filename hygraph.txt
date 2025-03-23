@@ -1,0 +1,22 @@
+Dentro do projeto vai em API playground
+
+Cria um MyQuery
+
+e você vai selecionando os modelos, atributos
+
+exemplo:
+query MyQuery {
+  page(where: {slug: "home"}) {
+    introduction {
+      raw
+    }
+    knownTechs {
+      iconSvg
+      name
+      startDate
+    }
+  }
+  technologies {
+    name
+  }
+}

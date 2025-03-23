@@ -24,4 +24,48 @@ Hygraph CMS - É uma API que traz as informações cadastradas ou seja uma vez c
 Migrado do Prisma para o Hygraph CMS.
 
 Como usar, primeiro logar no site do hygraphcms, em seguida criar um projeto "free forever"
-ir em schema e criar um models.
+ir em schema e criar um models chamado page e nela vai constar:
+um slug, rich text, asset picker
+
+criar um proximo models chamado technology  e nela vai constar:
+single line text, multi line text, date
+
+voltamos para a page e vamos criar um relacionamento (reference)
+entre a page e technologies marca essa caixa Allow multiple e coloca um display name.
+
+vamos criar mais um models chamado Social nela vai constar:
+Single line text, multi line text, single line text nesse caso como é a URL temos que ir em validations e marcar match a specific pattern e colocar URL
+
+voltamos para a page e vamos criar um relacionamento (reference)
+entre a page e socials marca essa caixa Allow multiple e coloca um display name.
+
+criar mais um relacionamento (reference)
+entre a page e tecnologies com o nome Known Techs
+marca essa caixa Allow multiple e coloca um display name.
+
+agora vamos para o content para cadastrar as informações.
+vai para page add entry
+slug - home
+texto - copia e cola do que já tem no site.
+add profile picture
+intro technologies deixara apenas o que for ficar visivel.
+create and add technology
+coloca o nome
+no icon svg tem que ir no site do react icons e copiar o SVG pelo HTMl
+start date preenche.
+fazer a mesma coisa no social clicando em criar social
+e no known techs
+
+ir no project settings
+
+ fetch(process.env.HYGRAPH_URL!)
+ colocando o ! para ignorar o erro que a variavel pode ser nula.
+
+ os headers é onde a gente passa nossa autenticação.
+
+ cacheada por 1 dia = revalidate: 60 * 60 * 24
+
+ dangerouslySetInnerHTML = vem uma propriedade _html
+ renderizar um html que está contido numa string ela é sim perigosa porque o usuário se colocar uma string nesse local ele pode invadir sua aplicação (hacking) porém já que estamos usando hygraphcms é seguro.
+
+ 60 * 60 * 24 // 24 hours

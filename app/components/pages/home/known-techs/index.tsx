@@ -2,7 +2,11 @@ import { TbBrandNextjs } from "react-icons/tb"
 import { SectionTitle } from "../section-title"
 import { KnownTech } from "./known-tech"
 
-export const KnowTechs = () => {
+type KnownSectionProps = {
+
+}
+
+export const KnowTechs = ({}: KnownSectionProps) => {
   return (
     <section className="container py-16">
       <SectionTitle subtitle="expertise" title="Knowledge" />
@@ -20,4 +24,4 @@ export const KnowTechs = () => {
       </div>
     </section>
   );
-}
+};
