@@ -20,3 +20,8 @@ query MyQuery {
     name
   }
 }
+
+criando um component dentro do schema você vai em components e clica em add
+coloca o displayname e add component, onde poderemos reutilizar.
+
+após isso vai no project para criar um basic onde você vai referenciar esse componente.

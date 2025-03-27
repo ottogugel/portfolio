@@ -1,12 +1,12 @@
 import { SectionTitle } from "../section-title"
 import { KnownTech } from "./known-tech"
-import { KnowTech as IKnownTech } from "@/app/types/project"
+import { KnownTech as IKnownTech } from "@/app/types/projects";
 
 type KnownTechsProps = {
-  techs: IKnownTech[]
-}
+  techs: IKnownTech[];
+};
 
-export const KnowTechs = ({ techs }: KnownTechsProps) => {
+export const KnownTechs = ({ techs }: KnownTechsProps) => {
   return (
     <section className="container py-16">
       <SectionTitle subtitle="expertise" title="Knowledge" />
