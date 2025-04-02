@@ -69,3 +69,11 @@ ir no project settings
  renderizar um html que está contido numa string ela é sim perigosa porque o usuário se colocar uma string nesse local ele pode invadir sua aplicação (hacking) porém já que estamos usando hygraphcms é seguro.
 
  60 * 60 * 24 // 24 hours
+
+ # para destruturar e assim não ter que ficar colocando experience.companyUrl
+ basta fazer isso
+ const { endDate, companyName, companyLogo, companyUrl, description, role, technologies } = experience
+
+ e assim você só vai colocar companyUrl
+
+ atributo do tailwind list-disc adiciona bolinhas na listagem.

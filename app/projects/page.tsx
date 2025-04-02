@@ -1,6 +1,10 @@
 import { PageIntroduction } from "../components/pages/projects/page-introduction";
 import { ProjectsList } from "../components/pages/projects/projects-list";
 
+const getDataPage = async () => {
+  const query = ``;
+}
+
 export default function Projects() {
   return (
     <>
