@@ -2,7 +2,7 @@ import { RichText } from "@/app/components/rich-text";
 import { TechBadge } from "@/app/components/tech-badge";
 import { workExperience } from "@/app/types/work-experience";
 import { differenceInMonths, differenceInYears, format } from "date-fns";
-import enAU from "date-fns/locale/en-AU";
+import { enUS } from "date-fns/locale";
 import Image from "next/image"
 
 type ExperienceItemProps = {
@@ -15,9 +15,9 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
 
   const startDate = new Date(experience.startDate)
 
-  const formattedStartDate = format(startDate, 'MMM yyyy', { locale: enAU })
+  const formattedStartDate = format(startDate, 'MMM yyyy', { locale: enUS })
   const formattedEndDate = endDate
-      ? format(new Date(endDate), "MMM yyyy", { locale: enAU })
+      ? format(new Date(endDate), "MMM yyyy", { locale: enUS })
       : "O momento";
 
 
