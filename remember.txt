@@ -144,3 +144,8 @@ tudo o que é colocado em export const metadata no layout.tsx vai ser reutilizad
 onde tiver o nome Projetos | Otto Gugel Dev é chamado de template.
 %s - vai ser substituido para o titulo que a gente coloca na pagina
 mas também é preciso colocar em outras partes como projects > [slug] > page.tsx > page.tsx
+
+Metadados estático
+export const metadata = {
+  title: 'Project',
+}
