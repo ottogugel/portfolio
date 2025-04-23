@@ -114,3 +114,33 @@ export async function generateStaticParams() {
     }
   ]
 }
+
+<T> = Generic do typescript uma forma que a gente define um tipo que vai ser retornado.
+o retorno da função vai ser um number
+ex: fetchHygraphQuery<number>
+
+SEO Estático e Dinâmico no Next.JS
+export async function generateMetadata({
+  params: { slug }
+}: ProjectProps): Promise<Metadata> {
+
+  const data = await getProjectDetails(slug)
+  const project = data.project;
+
+  return {
+    title: project.title,
+    description: project.description.text,
+    openGraph: {
+      images: {
+        url: project.thumbnail.url,
+        width: 1200,
+        height: 630,
+      }
+    }
+  }
+}
+
+tudo o que é colocado em export const metadata no layout.tsx vai ser reutilizado nas outras paginas
+onde tiver o nome Projetos | Otto Gugel Dev é chamado de template.
+%s - vai ser substituido para o titulo que a gente coloca na pagina
+mas também é preciso colocar em outras partes como projects > [slug] > page.tsx > page.tsx
