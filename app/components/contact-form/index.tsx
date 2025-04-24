@@ -1,10 +1,11 @@
-'use client'
+"use client";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Button } from "../button";
-import { SectionTitle } from "../pages/home/section-title"
-import { useForm } from 'react-hook-form'
+import { SectionTitle } from "../pages/home/section-title";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { zodResolver } from '@hookform/resolvers/zod'
+import { zodResolver } from "@hookform/resolvers/zod";
+import toast from "react-hot-toast";
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
@@ -12,21 +13,40 @@ const contactFormSchema = z.object({
   message: z.string().min(1).max(100),
 });
 
-type ContactFormData = z.infer<typeof contactFormSchema>
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const ContactForm = () => {
-
-  const { handleSubmit, register } = useForm<ContactFormData>({
+  const { handleSubmit, register, reset } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log(data);
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await fetch("https://formsubmit.co/ottogugel99@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          _captcha: "false",
+        }),
+      });
+
+      reset(); // limpa o formulário
+      toast.success("Mensagem enviada com sucesso!");
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      toast.error("Ocorreu um erro ao enviar. Tente novamente.");
+    }
   };
 
-
   return (
-    <section id="contact" className="py-16 px-6 md:py-32 flex items-center jsutify-center bg-gray-950">
+    <section
+      id="contact"
+      className="py-16 px-6 md:py-32 flex items-center jsutify-center bg-gray-950"
+    >
       <div className="w-full max-w-[420px] mx-auto">
         <SectionTitle
           subtitle="contact"
@@ -42,21 +62,21 @@ export const ContactForm = () => {
             placeholder="Name"
             className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-blue-600"
             {...register("name")}
-            required={true}
+            required
           />
           <input
             placeholder="Email"
             type="email"
             className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-blue-600"
             {...register("email")}
-            required={true}
+            required
           />
           <textarea
             placeholder="Message"
             className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-blue-600"
             maxLength={500}
             {...register("message")}
-            required={true}
+            required
           />
 
           <Button className="w-max mx-auto mt-6 shadow-button">
@@ -66,4 +86,4 @@ export const ContactForm = () => {
       </div>
     </section>
   );
-}
+};
