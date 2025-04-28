@@ -149,3 +149,12 @@ Metadados estático
 export const metadata = {
   title: 'Project',
 }
+
+se quiser para não ficar tão codigo sujo pode fazer um arquivo constantes na lib de animprops.ts e importar.
+initial={{ opacity: 0, scale: 0 }}
+ whileInView={{ opacity: 1, scale: 1}}
+exit={{opacity: 0, scale: 0}}
+
+
+após criar a variavel é sempre necessário colocar o transition e o index (i) já que não tem como ficar na variavel.
+transition={{ duration: 0.2, delay: 0.5 + i * 0.1}}
