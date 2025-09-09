@@ -72,10 +72,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { slug }
+  params: { slug },
 }: ProjectProps): Promise<Metadata> {
-
-  const data = await getProjectDetails(slug)
+  const data = await getProjectDetails(slug);
   const project = data.project;
 
   return {
@@ -86,7 +85,7 @@ export async function generateMetadata({
         url: project.thumbnail.url,
         width: 1200,
         height: 630,
-      }
-    }
-  }
+      },
+    },
+  };
 }
