@@ -11,9 +11,9 @@ export const ProjectSections = ({ sections }: ProjectSectionProps) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section className="container my-12 md:my-24">
+    <section className="container my-12 md:my-20">
       <h2 className="text-2xl md:text-3xl font-medium text-gray-300 text-center mb-12">
-        Galeria
+        Gallery
       </h2>
 
       {/* Grid com todas as imagens */}
