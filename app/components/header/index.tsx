@@ -23,7 +23,9 @@ export const Header = () => {
       className="absolute top-0 w-full z-10 h-24 flex items-center justify-center"
     >
       <div className="container flex items-center justify-between">
-        <Link href="/">Otto Gugel</Link>
+        <Link href="/" className="text-2xl font-bold text-gradient">
+          &lt;OG /&gt;
+        </Link>
 
         <nav className="flex items-center gap-4 sm:gap-10">
           {NAV_ITEMS.map((item) => (

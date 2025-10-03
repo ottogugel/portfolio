@@ -1,13 +1,14 @@
+import { TechBadge } from "@/app/components/tech-badge";
+import { techBadgeAnimation } from "@/app/lib/animations";
 import { Project } from "@/app/types/projects";
-import Image from "next/image"
+import Image from "next/image";
 
 type ProjectCardProps = {
-  project: Project
-}
+  project: Project;
+};
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-
-  const technologies = project.technologies.map(x => x.name).join(', ');
+  const technologies = project.technologies.map((x) => x.name).join(", ");
 
   return (
     <div className="rounded-lg h-[436px] flex flex-col bg-gray-800 overflow-hidden border-2 border-gray-800 hover:border-blue-500 opacity-70 hover:opacity-100 hover:shadow-button transition-all group">
@@ -29,9 +30,16 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <p className="mt-2 text-gray-400 line-clamp-4">
           {project.shortDescription}
         </p>
-        <span className="text-gray-300 text-sm font-medium block mt-auto truncate">
-          {technologies}
-        </span>
+        <div className="flex gap-x-2 gap-y-3 flex-wrap mt-8 mb-8 lg:max-w-[350px]">
+          {project.technologies.map((tech, i) => (
+            <TechBadge
+              key={`${project.title}-tech-${tech.name}`}
+              name={tech.name}
+              {...techBadgeAnimation}
+              transition={{ duration: 0.2, delay: 0.5 + i * 0.1 }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
