@@ -1,9 +1,13 @@
-import { cn } from "@/app/lib/util"
+import { cn } from "@/app/lib/util";
 
 type HorizontalDividerProps = {
-    className?: string
-}
+  className?: string;
+};
 
 export const HorizontalDivider = ({ className }: HorizontalDividerProps) => {
-  return <div className={cn('w-full my-8 border-b border-b-gray-800', className)}></div>;
+  return (
+    <div
+      className={cn("w-full my-8 border-b border-b-gray-800", className)}
+    ></div>
+  );
 };
