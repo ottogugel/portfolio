@@ -59,7 +59,7 @@ const getPageData = async (): Promise<HomePageData> => {
   `;
   return fetchHygraphQuery(
     query,
-    60 * 60 * 24 // 24hours
+    60 * 1 // 1min
   );
 };
 
